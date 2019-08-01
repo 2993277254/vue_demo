@@ -33,7 +33,11 @@
         <button @click = "counter++" style = "font-size:25px;">点我</button>
         千米 : <input type = "text" v-model = "kilometers">
         米 : <input type = "text" v-model = "meters">
-        <div v-bind:class="{active:isActive}"></div>
+        <div v-bind:class="{active:isActive}">xxx</div>
+        <div class="static"
+             v-bind:class="{ active: isActive, 'text-danger': hasError }">
+            xxx
+        </div>
     </div>
 </template>
 
@@ -56,7 +60,8 @@
         counter:1,
         kilometers : 0,
         meters:0,
-        isActive: true
+        isActive: true,
+        hasError: true
     };
 
     export default {
@@ -119,5 +124,8 @@
         width: 100px;
         height: 100px;
         background: green;
+    }
+    .text-danger {
+        background: red;
     }
 </style>
