@@ -1,5 +1,5 @@
 <template>
-    <div name="day01">
+    <div id="day01">
         v-html指令<div v-html="massage"></div><br>
         <h1>{{massage}}</h1>
         计算{{5+5}}<br>
@@ -38,6 +38,22 @@
              v-bind:class="{ active: isActive, 'text-danger': hasError }">
             xxx
         </div>
+        <button @click="greet">greet</button>
+        <!--复选框-->
+        <p>单个复选框：</p>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{checked}}</label>
+        <p>多个复选框：</p>
+        <input type="checkbox" id="runoob" value="Runoob" v-model="checkedNames">
+        <label for="runoob">Runoob</label>
+        <input type="checkbox" id="google" value="Google" v-model="checkedNames">
+        <label for="google">Google</label>
+        <input type="checkbox" id="taobao" value="Taobao" v-model="checkedNames">
+        <label for="taobao">taobao</label>
+        <br>
+        <span>选择的值为: {{ checkedNames }}</span>
+        <br>
+        {{msgchild}}
     </div>
 </template>
 
@@ -61,7 +77,9 @@
         kilometers : 0,
         meters:0,
         isActive: true,
-        hasError: true
+        hasError: true,
+        checked:false,
+        checkedNames:[]
     };
 
     export default {
@@ -69,10 +87,17 @@
         data() {
             return data;
         },
+        props:['msgchild'],
         //方法
         methods: {
             reverseMessage: function () {
                 this.msg2 = this.msg2.split('').reverse().join('')
+            },
+            greet:function (event) {
+                alert(''+this.msg+'!')
+                if (event){
+                    alert(event.target.tagName)
+                }
             }
         },
         //    过滤器
