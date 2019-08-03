@@ -9,7 +9,9 @@
 <script>
     export default {
         name: "todo-item",
-        props:['todo']
+        props:{
+            todo:String
+        }
     }
 </script>
 

@@ -87,7 +87,9 @@
         data() {
             return data;
         },
-        props:['msgchild'],
+        props:{
+            msgchild:String
+        },
         //方法
         methods: {
             reverseMessage: function () {
