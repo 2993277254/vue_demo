@@ -1,7 +1,7 @@
 <template>
     <div id="todo-item">
         <ol>
-            <li>{{todo.text}}</li>
+            <li>{{todo.name}}</li>
         </ol>
     </div>
 </template>
@@ -10,7 +10,10 @@
     export default {
         name: "todo-item",
         props:{
-            todo:String
+            todo:{
+                type:Object,
+                required:true
+            }
         }
     }
 </script>

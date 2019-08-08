@@ -16,7 +16,7 @@
         methods:{
             incrementHandler:function () {
                 this.counter+=1;
-                this.$emit('increment')
+                this.$emit('increment')//触发父组件指令
             }
         }
 

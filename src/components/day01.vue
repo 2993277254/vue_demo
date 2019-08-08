@@ -88,7 +88,10 @@
             return data;
         },
         props:{
-            msgchild:String
+            msgchild:{
+                type:String,
+                required:true
+            }
         },
         //方法
         methods: {
@@ -100,7 +103,8 @@
                 if (event){
                     alert(event.target.tagName)
                 }
-            }
+            },
+
         },
         //    过滤器
         filters: {
